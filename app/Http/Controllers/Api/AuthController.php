@@ -42,4 +42,10 @@ class AuthController extends Controller
 
         return response()->api_error('Login error', $result['message']);
     }
+	
+	public function logout()
+    {
+        Auth::guard('api')->logout();
+        return response()->api_success('Logout successfully!!!');
+    }
 }
